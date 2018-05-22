@@ -12,7 +12,7 @@
     "prettier:check": "prettier --list-different './src/**/*.ts'",
     "publish": "npm publish",
     "test": "jest",
-    "test:live": "npx jest --watch"
+    "test:live": "npx jest --watchAll"
   },
   "repository": {
     "type": "git",

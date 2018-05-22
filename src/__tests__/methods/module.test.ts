@@ -19,11 +19,12 @@ import * as FirebaseAdmin from 'firebase-admin';
 import * as FS from 'fs';
 import * as Path from 'path';
 import Chalk from 'chalk';
+import RestifyFirebaseAuth from '../../index'
 import { random } from 'lodash';
 
 let apiKey: string;
 let databaseUrl: string;
-let defaultApp: FirebaseAdmin.app.App;
+let firebaseApp: FirebaseAdmin.app.App;
 let projectId: string;
 let storageBucket: string;
 let token: string;
@@ -60,7 +61,7 @@ beforeAll(async () => {
 	databaseUrl = 'https://' + projectId + '.firebaseio.com';
 	storageBucket = projectId + '.appspot.com';
 
-	defaultApp = FirebaseAdmin.initializeApp({
+	firebaseApp = FirebaseAdmin.initializeApp({
 	  credential: FirebaseAdmin.credential.cert(serviceAccount),
 	  databaseURL: databaseUrl,
 	  storageBucket,
@@ -73,13 +74,14 @@ beforeAll(async () => {
 
   token = await FirebaseAdmin.auth().createCustomToken(newUserUid, {
     isAdmin: true
-  }).then((customToken: string) => {
-		return Firebase.auth().signInWithCustomToken(customToken);
-	})
+	})	
 });
 
+// TODO: Implement real test
 test('Validate Authorization', () => {
-	expect(1).toBe(1);
+	expect(RestifyFirebaseAuth({
+		firebase: firebaseApp
+	})).not.toBe(1);
 });
 
 /**
