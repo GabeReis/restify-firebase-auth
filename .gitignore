@@ -2,7 +2,7 @@
 lib/
 
 # Test resources
-__tests__/resources/*
+__tests__/resources/
 
 # Logs
 logs
