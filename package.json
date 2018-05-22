@@ -4,32 +4,35 @@
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "author": "“Gabriel Reis <“jg_reis@hotmail.com”> (https://github.com/gabrielreiscom)",
   "scripts": {
     "build": "rm -Rf ./dist/* && tsc",
     "prepublish": "npm run build",
     "publish": "npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test-live": "npx jest --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielreiscom/restify-firebase-auth.git"
   },
   "keywords": [],
-  "author": "“Gabriel Reis <“jg_reis@hotmail.com”> (https://github.com/gabrielreiscom)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabrielreiscom/restify-firebase-auth/issues"
   },
   "homepage": "https://github.com/gabrielreiscom/restify-firebase-auth#readme",
   "devDependencies": {
+    "@types/restify": "^5.0.8",
+    "@types/restify-errors": "^4.3.2",
+    "jest": "^22.4.4",
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "@types/restify": "^5.0.8",
-    "@types/restify-errors": "^4.3.2",
+    "@types/jest": "^22.2.3",
     "debug": "^3.1.0",
     "firebase-admin": "^5.12.1",
-    "restify": "^7.2.0",
-    "restify-errors": "^6.0.0"
+    "restify-errors": "^6.0.0",
+    "ts-jest": "^22.4.6"
   }
 }
