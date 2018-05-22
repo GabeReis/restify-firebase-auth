@@ -14,11 +14,12 @@
  * limitations under the License.
 */
 
-import * as Firebase from 'firebase';
 import * as FirebaseAdmin from 'firebase-admin';
 import * as FS from 'fs';
 import * as Path from 'path';
 import Chalk from 'chalk';
+import Firebase from '@firebase/app';
+import '@firebase/auth';
 import RestifyFirebaseAuth from '../../index'
 import { random } from 'lodash';
 
