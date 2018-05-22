@@ -17,7 +17,7 @@ describe('Unauthorized Response', () => {
   test('Code, no Message', () => {
 
     const testCode = 'test_error_code';
-    const testMessage = null;
+    const testMessage = '';
     const returnObject = new RestifyErrors.NotAuthorizedError(testCode, testMessage)
 
     expect(
@@ -27,7 +27,7 @@ describe('Unauthorized Response', () => {
 
   test('Message, no code', () => {
 
-    const testCode = null;
+    const testCode = '';
     const testMessage = 'This is a test message';
     const returnObject = new RestifyErrors.NotAuthorizedError(testCode, testMessage)
 
