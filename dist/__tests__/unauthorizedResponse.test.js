@@ -11,12 +11,12 @@ describe('Unauthorized Response', function () {
     });
     test('Code, no Message', function () {
         var testCode = 'test_error_code';
-        var testMessage = null;
+        var testMessage = '';
         var returnObject = new RestifyErrors.NotAuthorizedError(testCode, testMessage);
         expect(index_1.unauthorizedResponse(testCode, testMessage)).toEqual(returnObject);
     });
     test('Message, no code', function () {
-        var testCode = null;
+        var testCode = '';
         var testMessage = 'This is a test message';
         var returnObject = new RestifyErrors.NotAuthorizedError(testCode, testMessage);
         expect(index_1.unauthorizedResponse(testCode, testMessage)).toEqual(returnObject);
