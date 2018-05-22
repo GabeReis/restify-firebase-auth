@@ -1,6 +1,9 @@
 # Typescript
 lib/
 
+# Test resources
+__tests__/resources/*
+
 # Logs
 logs
 *.log

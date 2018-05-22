@@ -14,9 +14,14 @@
  * limitations under the License.
 */
 
-import * as FirebaseAdmin from 'firebase-admin';
+import { debug } from '../../index';
 
-export default interface IOptions {
-	firebase: FirebaseAdmin.app.App;
-	verbose?: boolean;
-}
+describe('Debug - String', () => {
+	test('Debug', () => {
+		expect(debug(`Test Message`, true)).toBe(true);
+	});
+
+	test('Debug', () => {
+		expect(debug(`Test Message`, false)).toBe(false);
+	});
+});
